@@ -93,4 +93,6 @@ g++ `pkg-config --cflags --libs opencv` -pthread <source> -o <binary>
 
 ## About
 
-I taken 30 point for this project on my exam. (the maximum)
+**I taken 30 point for this project on my exam. (the maximum)**
+If you want read my relaction with Image you can see *Relazione.pdf* but it is in **italian language**
+
