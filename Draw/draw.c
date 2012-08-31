@@ -6,7 +6,7 @@
 #  
 # 
 # This file may be licensed under the terms of of the
-# GNU General Public License Version 2 (the ``GPL'').
+# GNU General Public License Version 3 (the ``GPL'').
 # 
 # Software distributed under the License is distributed
 # on an ``AS IS'' basis, WITHOUT WARRANTY OF ANY KIND, either
@@ -29,7 +29,7 @@
 //File di configurazione
 #define FILE_CONFIG "../config/config.txt"
 
-//main
+
 int main(int argc, char *argv[])
 {
     if(argc != 2)
