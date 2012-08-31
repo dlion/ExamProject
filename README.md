@@ -2,23 +2,29 @@ ExamProject
 ===========
 
 This is my Exam Project for my high school gradutation.
+
 During the year I wrote some sources in C using OpenCV.
-I wrote 5 program and 1 library.
+
+I wrote 5 program and 1 library for this.
 
 
 Calibra
 =======
 
-Is a program that allow to find and track the colour that you want, mixing HSV values. 
+Is a program that allow to find and track the colour that you want, mixing HSV values.
+
 When you find the colour you can save this in a configuration file pressing 's' also if you press 'q' the program ends.
+
 When you save the values in the configuration file this allow to find this color also with other programs.
 
 
 Bubbles
 =======
 
-Is a little game wrote in C, use thread, opencv and other thing.
+Is a little game wrote in C, use thread, opencv functions and other things.
+
 With your "color" you have to touch the red balls on the screen; if you touch the blue ball you lose.
+
 First of all, you have to run the Calibra program for bring HSV values for find your color.
 
 
@@ -26,9 +32,13 @@ Draw
 ====
 
 With this program you can color on the screen.
+
 In this screen you can find 3 rectangle, one with blue, one with red, one with green color.
+
 If you touch one of this you can color with it.
+
 If you press 'c' you delete all and reset the "paintbrush".
+
 First of all, you have to run the Calibra program for bring HSV values for find your color.
 
 
@@ -40,6 +50,7 @@ This program track your head on the screen, this program use the cascade files f
 Movement
 ========
 If you want monitoring a place, with this program you can.
+
 This program save a frame it has suffered a modify respecting the origin; at the end of the program this save all frame how video file (avi) so you can watch
 only frame that interesting you.
 
