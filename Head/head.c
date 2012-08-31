@@ -6,7 +6,7 @@
 #
 #
 # This file may be licensed under the terms of of the
-# GNU General Public License Version 2 (the ``GPL'').
+# GNU General Public License Version 3 (the ``GPL'').
 #
 # Software distributed under the License is distributed
 # on an ``AS IS'' basis, WITHOUT WARRANTY OF ANY KIND, either
@@ -19,7 +19,6 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 
-//Header
 #include <cv.h>
 #include <highgui.h>
 #include "../lib/funzioni.h"
@@ -35,6 +34,7 @@
 //Indica al programma se rilevare anche gli occhi, il naso e la bocca. (0 = no, 1 = si')
 #define RILEVA_EXTRA 0
 
+//Funzione per rilevare i dettagli, come parametro l'immagine e il nome del file cascade
 void rilevaDettagli(IplImage *img,char *file)
 {
     //Faccio spazio e prendo le informazioni dal file passato
