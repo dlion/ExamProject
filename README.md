@@ -81,7 +81,14 @@ You should have received a copy of the GNU General Public License along with thi
 ## How to build
 
 
-`make`
+```
+make
+```
+or
+
+```
+g++ `pkg-config --cflags --libs opencv` -pthread <source> -o <binary>
+```
 
 
 ## About
