@@ -6,7 +6,7 @@
 # 
 #
 # This file may be licensed under the terms of of the
-# GNU General Public License Version 2 (the ``GPL'').
+# GNU General Public License Version 3 (the ``GPL'').
 #
 # Software distributed under the License is distributed
 # on an ``AS IS'' basis, WITHOUT WARRANTY OF ANY KIND, either
@@ -18,6 +18,7 @@
 # or write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
+
 //Librerie necessarie al funzionamento
 #include <cv.h>
 #include <highgui.h>
