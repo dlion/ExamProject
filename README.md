@@ -5,12 +5,12 @@ This is my Exam Project for my high school gradutation.
 
 During the year I wrote some sources in C using OpenCV.
 
-I wrote 5 program and 1 library for this.
+I wrote 5 programs and 1 library for this.
 
 
 ## Calibra
 
-Is a program that allow to find and track the colour that you want, mixing HSV values.
+It's a program that allow to find and track the colour that you want, mixing HSV values.
 
 When you find the colour you can save this in a configuration file pressing 's' also if you press 'q' the program ends.
 
@@ -19,11 +19,11 @@ When you save the values in the configuration file this allow to find this color
 
 ## Bubbles
 
-Is a little game wrote in C, use thread, opencv functions and other things.
+It's a little game wrote in C, use thread, opencv functions and other things.
 
-With your "color" you have to touch the red balls on the screen; if you touch the blue ball you lose.
+You have to touch with your "color" the red balls on the screen; if you touch the blue ball you lose.
 
-First of all, you have to run the Calibra program for bring HSV values for find your color.
+First of all, you have to run the Calibra program to bring HSV values to find your color.
 
 
 ## Draw
@@ -36,25 +36,25 @@ If you touch one of this you can color with it.
 
 If you press 'c' you delete all and reset the "paintbrush".
 
-First of all, you have to run the Calibra program for bring HSV values for find your color.
+First of all, you have to run the Calibra program to bring HSV values to find your color.
 
 
 ## Head
 
-This program track your head on the screen, this program use the cascade files for recognize your face and if you want also the eyes.
+This program tracks your head on the screen, this program uses the cascade files to recognize your face and if you want also the eyes.
 
 
 ## Movement
 
-If you want monitoring a place, with this program you can.
+If you want to monitor a place, with this program you can.
 
-This program save a frame it has suffered a modify respecting the origin; at the end of the program this save all frame how video file (avi) so you can watch
-only frame that interesting you.
+This program saves a frame it has suffered a modify respecting the origin; at the end of the program this saves all frames how video file (avi) so you can watch
+only frames that interesting you.
 
 
 ## Lib
 
-This library containing some functions for run other programs.
+This library contain some functions to run other programs.
 
 ## License
 
@@ -93,7 +93,7 @@ g++ `pkg-config --cflags --libs opencv` -pthread <source> -o <binary>
 
 ## About
 
-**I taken 30 point for this project on my exam. (the maximum)**
+**I took 30 points for this project on my exam. (the maximum)**
 
-If you want read my relaction with Image you can see *Relazione.pdf* but it is in **italian language**
+If you want to read my relaction with Images you can see *Relazione.pdf* but it is in **italian language**.
 
