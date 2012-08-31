@@ -1,4 +1,5 @@
-### ExamProject
+ExamProject
+===========
 
 This is my Exam Project for my high school gradutation.
 
@@ -7,7 +8,7 @@ During the year I wrote some sources in C using OpenCV.
 I wrote 5 program and 1 library for this.
 
 
-### Calibra
+## Calibra
 
 Is a program that allow to find and track the colour that you want, mixing HSV values.
 
@@ -16,7 +17,7 @@ When you find the colour you can save this in a configuration file pressing 's' 
 When you save the values in the configuration file this allow to find this color also with other programs.
 
 
-### Bubbles
+## Bubbles
 
 Is a little game wrote in C, use thread, opencv functions and other things.
 
@@ -25,7 +26,7 @@ With your "color" you have to touch the red balls on the screen; if you touch th
 First of all, you have to run the Calibra program for bring HSV values for find your color.
 
 
-### Draw
+## Draw
 
 With this program you can color on the screen.
 
@@ -38,12 +39,12 @@ If you press 'c' you delete all and reset the "paintbrush".
 First of all, you have to run the Calibra program for bring HSV values for find your color.
 
 
-### Head
+## Head
 
 This program track your head on the screen, this program use the cascade files for recognize your face and if you want also the eyes.
 
 
-### Movement
+## Movement
 
 If you want monitoring a place, with this program you can.
 
@@ -51,11 +52,11 @@ This program save a frame it has suffered a modify respecting the origin; at the
 only frame that interesting you.
 
 
-### Lib
+## Lib
 
 This library containing some functions for run other programs.
 
-### License
+## License
 
 ExamProject is released under the GNU General Public License (GPL3):
 
@@ -70,19 +71,19 @@ On Debian systems, the complete text of the GNU General Public License can be fo
 You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
 
 
-### Dependencies
+## Dependencies
 
 * OpenCV
 * g++
 * ffmpeg
 
 
-### How to build
+## How to build
 
 
 `make`
 
 
-### About
+## About
 
 I taken 30 point for this project on my exam. (the maximum)
