@@ -1,7 +1,7 @@
 ExamProject
 ===========
 
-This is my Exam Project for my high school gradutation.
+This is my Exam Project for my high school gradutation
 
 During the year I wrote some sources in C using OpenCV.
 
