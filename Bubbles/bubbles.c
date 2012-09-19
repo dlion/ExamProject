@@ -63,6 +63,7 @@ void nuoviValori(Bolla *dato)
     dato->passo = 1;
 }
 
+
 //Funzione per aggiornare con un ritardo la posizione delle bolle
 void *up(void *var)
 {
@@ -77,21 +78,21 @@ void *up(void *var)
             pthread_mutex_lock(&val->mutex);
             if(preso != 1)
             {
-            //Se la bolla arriva alla fine dello schermo ritorna su con nuovi valori
-            if(val->Y >= 475 )
-            {
-                //Se non sono un nemico diminuisco il punteggio
-                if(val->chi != 1)
-                    punt -= 10;
+                //Se la bolla arriva alla fine dello schermo ritorna su con nuovi valori
+                if(val->Y >= 475 )
+                {
+                    //Se non sono un nemico diminuisco il punteggio
+                    if(val->chi != 1)
+                        punt -= 10;
+                    else
+                        punt += 10;
+                
+                    nuoviValori(val);
+                }
                 else
-                    punt += 10;
-            
-                nuoviValori(val);
-            }
-            else
-                //Faccio camminare la bolla
-                val->Y += val->passo;
-            //Sblocco il mutex
+                    //Faccio camminare la bolla
+                    val->Y += val->passo;
+                //Sblocco il mutex
             }
             pthread_mutex_unlock(&val->mutex);
     }
@@ -215,6 +216,8 @@ void *video(void *stato)
                                 pthread_mutex_lock(&val[k]->mutex);
                                if(preso != 1)
                                {
+                                   //Temporary add to play pop (Only for unix)
+                                   system("/usr/bin/play -q pop.wav 2> /dev/null");
                                    punt += 10;
                                     //Scrivo +10 sopra la bolla
                                     cvPutText(img,"+10",cvPoint(val[k]->X,val[k]->Y-10),&scritta,CV_RGB(0,0,255));
