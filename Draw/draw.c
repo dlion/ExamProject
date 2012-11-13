@@ -147,9 +147,11 @@ int main(int argc, char *argv[])
                     cvAdd(img,buffer,img,NULL);
                 }
                 else
-                //Disegno il cerchio direttamente nel frame in modo da usarlo come puntatore
+                {
+                    buffer = cvCreateImage(cvGetSize(img),8,3);
+                    //Disegno il cerchio direttamente nel frame in modo da usarlo come puntatore
                    cvCircle(img,last,20,CV_RGB(159,200,120),-1,CV_AA,0);
-
+                }
                 //Mostro la gui
                 cvShowImage(NOME,img);
                 //Prendo il tasto premuto
@@ -165,6 +167,8 @@ int main(int argc, char *argv[])
                     buffer = cvCreateImage(cvGetSize(img),8,3);
                     capo = 0;
                 }
+                
+                
                 img = cvQueryFrame(frame);
             }
             cvReleaseImage(&buffer);
