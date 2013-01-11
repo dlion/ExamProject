@@ -146,7 +146,7 @@ void *video(void *stato)
     cvInitFont(&avviso,CV_FONT_HERSHEY_SIMPLEX,1.0,1.0,0,5,CV_AA);
     //Creo una Gui chiamata NOME
     cvNamedWindow(NOME,1);
-    
+    //Inizializzo il seme   
     srand((unsigned)time(NULL));
 
     for(k=0; k < NUM_MAX_BOLLE; k++)
