@@ -61,7 +61,7 @@ int main(int argc,char *argv[])
             //Alloco spazio per il rettangolo
             Rettangolo *punti = (Rettangolo*)malloc(sizeof(Rettangolo));
             //Leggo i dati dal file di configurazione
-            leggiConfig(low,high,FILE_CONFIG);
+            leggiConfig(low,high,(char*)FILE_CONFIG);
             //Creo le GUI
             cvNamedWindow(NORMAL,CV_WINDOW_AUTOSIZE);
             cvNamedWindow(BINARY,CV_WINDOW_AUTOSIZE);
@@ -124,7 +124,7 @@ int main(int argc,char *argv[])
                         break;
                     case 's':
                         //Se premo 's' salvo i dati che mi servono
-                        scriviConfig(low,high,FILE_CONFIG);
+                        scriviConfig(low,high,(char*)FILE_CONFIG);
                         break;
                 }
                 //Prendo un altro frame

@@ -81,9 +81,9 @@ void rilevaVolto(IplImage *img,CvHaarClassifierCascade *cascade, CvMemStorage *s
                     //Faccio il focus solo sulla faccia trovata escludendo il resto
                     cvSetImageROI(img,*rettangolo);
                     //Rilevo l'occhio sinistro
-                    rilevaDettagli(img,FILE_OCCHIO_SINISTRO);
+                    rilevaDettagli(img,(char*)FILE_OCCHIO_SINISTRO);
                     //Rilevo l'occhio destro
-                    rilevaDettagli(img,FILE_OCCHIO_DESTRO);
+                    rilevaDettagli(img,(char*)FILE_OCCHIO_DESTRO);
                     //Faccio ritornare il focus sull'immagine normale
                     cvResetImageROI(img);
                 }

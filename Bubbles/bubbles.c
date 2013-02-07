@@ -159,7 +159,7 @@ void *video(void *stato)
     pthread_create(&th[0],NULL,&up,(void*)val[0]);
 
     //Prendo i dati dal file di config
-    leggiConfig(low,high,FILE_CONFIG);
+    leggiConfig(low,high,(char*)FILE_CONFIG);
     
     filetto=fopen(CLASSIFICA,"r");
     if(filetto == NULL)

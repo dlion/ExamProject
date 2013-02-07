@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
             //Creo la Gui
             cvNamedWindow(NOME,1);
             //Leggo i dati
-            leggiConfig(low,high,FILE_CONFIG);
+            leggiConfig(low,high,(char*)FILE_CONFIG);
            
             while(img)
             {
