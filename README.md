@@ -98,5 +98,7 @@ g++ `pkg-config --cflags --libs opencv` -pthread <source> -o <binary>
 If you want to read my relaction with Images you can see *Relazione.pdf* but it is in **italian language**.
 
 Author: Domenico Leone Luciani
+
 Email: domenicoleoneluciani[AT]gmail[DOT]com
+
 Site: http://dlion.it
