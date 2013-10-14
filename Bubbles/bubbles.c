@@ -2,8 +2,8 @@
 # This file is part of Computer Vision Exam Project
 #
 # Copyright(c) 2012 Domenico Luciani
-# domenico.luciani@email.it
-# 
+# domenicoleoneluciani@gmail.com
+#
 #
 # This file may be licensed under the terms of of the
 # GNU General Public License Version 3 (the ``GPL'').
@@ -86,7 +86,7 @@ void *up(void *var)
                         punt -= 10;
                     else
                         punt += 10;
-                
+
                     nuoviValori(val);
                 }
                 else
@@ -113,7 +113,7 @@ void *video(void *stato)
     IplImage *img = cvQueryFrame(frame);
     IplImage *hsv = cvCreateImage(cvGetSize(img),8,3);
     IplImage *binary = cvCreateImage(cvGetSize(img),8,1);
-    
+
     //Inizializzo le bolle
     Bolla *val[NUM_MAX_BOLLE];
 
@@ -146,7 +146,7 @@ void *video(void *stato)
     cvInitFont(&avviso,CV_FONT_HERSHEY_SIMPLEX,1.0,1.0,0,5,CV_AA);
     //Creo una Gui chiamata NOME
     cvNamedWindow(NOME,1);
-    //Inizializzo il seme   
+    //Inizializzo il seme
     srand((unsigned)time(NULL));
 
     for(k=0; k < NUM_MAX_BOLLE; k++)
@@ -160,7 +160,7 @@ void *video(void *stato)
 
     //Prendo i dati dal file di config
     leggiConfig(low,high,(char*)FILE_CONFIG);
-    
+
     filetto=fopen(CLASSIFICA,"r");
     if(filetto == NULL)
     {
@@ -170,7 +170,7 @@ void *video(void *stato)
     }
     else
         fscanf(filetto,"%d",&champion);
-    
+
     fclose(filetto);
 
     //Prende i frame
@@ -225,8 +225,8 @@ void *video(void *stato)
                                }
                                     pthread_mutex_unlock(&val[k]->mutex);
                             }
-                        }   
-                        
+                        }
+
                     }
 
                 }
@@ -244,7 +244,7 @@ void *video(void *stato)
                 cvPutText(img,"GAME OVER",cvPoint((binary->width/2)-50,binary->height/2),&avviso,CV_RGB(0,0,255));
                 sprintf(messaggio,"Punteggio: %d ",punt);
                 cvPutText(img,messaggio,cvPoint((binary->width/2)-110,(binary->height/2)+80),&avviso,CV_RGB(0,0,255));
-                
+
                 sprintf(messaggio,"Livello: %d ",livello);
                 cvPutText(img,messaggio,cvPoint(img->width-100,20),&scritta,CV_RGB(255,255,0));
                 sprintf(messaggio,"Record: %d ",champion);
@@ -260,7 +260,7 @@ void *video(void *stato)
                puts("Record salvato!");
                champion = punt;
            }
-           
+
            if(ciclo_out == 50)
                 break;
         }
@@ -282,7 +282,7 @@ void *video(void *stato)
             cvPutText(img,messaggio,cvPoint(img->width-100,20),&scritta,CV_RGB(255,255,0));
             sprintf(messaggio,"Record: %d ",champion);
             cvPutText(img,messaggio,cvPoint(img->width-150,img->height-5),&scritta,CV_RGB(255,255,0));
-        
+
             //Se aumenta il punteggio aumento il livello
             switch(punt)
             {
@@ -328,14 +328,14 @@ void *video(void *stato)
                     if(livello == 3)
                     {
                         for(k=num; k < 30; k++)
-                        { 
+                        {
                             pthread_mutex_init(&val[k]->mutex,NULL);
                             nuoviValori(val[k]);
                             if(k <= 25)
                                 val[k]->chi = 1;
                             else
                                 val[k]->chi = 0;
-                            
+
                             pthread_create(&th[k],NULL,&up,(void*)val[k]);
                         }
                         num = 30;
@@ -382,7 +382,7 @@ void *video(void *stato)
         }
 
         cvShowImage(NOME,img);
-            
+
         //Aspetto il tasto
         tasto = cvWaitKey(15);
         //Se premo q esco
@@ -391,11 +391,11 @@ void *video(void *stato)
         //Prendo l'altro frame
         img = cvQueryFrame(frame);
     }
-    
+
     //Distruggo tutti i mutex
     for(k=0; k < num; k++)
         pthread_mutex_destroy(&val[k]->mutex);
-   
+
     //Distruggo tutto
     cvReleaseImage(&img);
     cvReleaseCapture(&frame);

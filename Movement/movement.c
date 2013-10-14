@@ -2,8 +2,8 @@
 # This file is part of Computer Vision Exam Project
 #
 # Copyright(c) 2012 Domenico Luciani
-# domenico.luciani@email.it
-# 
+# domenicoleoneluciani@gmail.com
+#
 #
 # This file may be licensed under the terms of of the
 # GNU General Public License Version 3 (the ``GPL'').
@@ -29,12 +29,12 @@
 int main(int argc,char **argv)
 {
     if(argc != 2)
-    {   
+    {
         printf("usage: %s <mode>\n0 - integrate webcam\n1 - external webcam\n",argv[0]);
         exit(-1);
     }
     else
-    {   
+    {
         int web=atoi(argv[1]);
         if(web >= 0 && web <= 1)
         {
@@ -43,7 +43,7 @@ int main(int argc,char **argv)
             cvSetCaptureProperty(cam,CV_CAP_PROP_FRAME_HEIGHT,480);
             IplImage *img = cvQueryFrame(cam);
             IplImage *copia = cvCreateImage(cvGetSize(img),8,3);
-            IplImage *prima = NULL; 
+            IplImage *prima = NULL;
             IplImage *binary = cvCreateImage(cvGetSize(img),8,1);
             IplImage *ris = cvCreateImage(cvGetSize(img),8,3);
 
@@ -74,7 +74,7 @@ int main(int argc,char **argv)
                 printf("-- Scelta modalita' --\n1)Dinamica -- Se ci saranno variazioni tra un frame e l'altro\n2)Statica -- Se ci sono variazioni fra un determinato frame e il frame corrente\nScelta: ");
                 scanf("%1d",&scelta);
             }while(scelta < 1 || scelta > 2);
-           
+
             while(img)
             {
                 //Ruoto l'immagine
@@ -110,7 +110,7 @@ int main(int argc,char **argv)
                         riduciNoise(binary,binary);
                         cvCopy(img,prima);
                     }
-                    
+
                 }
                 //Statica
                 else
@@ -136,7 +136,7 @@ int main(int argc,char **argv)
                             trovato = 1;
                     }
                 }
-                
+
                 //Se trovo un cambiamento
                 if(trovato)
                 {
@@ -150,7 +150,7 @@ int main(int argc,char **argv)
                 }
                 //Mostro l'immagine
                 cvShowImage(NOME,copia);
-                    
+
                 tasto = cvWaitKey(15);
 
                 if(tasto == 'q')
@@ -177,4 +177,4 @@ int main(int argc,char **argv)
     }
     return 0;
 }
-    
+

@@ -1,18 +1,18 @@
 /*
-# This file is part of Computer Vision Exam Project                            
-#                                           
-# Copyright(c) 2012 Domenico Luciani        
-# domenico.luciani@email.it
-#  
-# 
+# This file is part of Computer Vision Exam Project
+#
+# Copyright(c) 2012 Domenico Luciani
+# domenicoleoneluciani@gmail.com
+#
+#
 # This file may be licensed under the terms of of the
 # GNU General Public License Version 3 (the ``GPL'').
-# 
+#
 # Software distributed under the License is distributed
 # on an ``AS IS'' basis, WITHOUT WARRANTY OF ANY KIND, either
 # express or implied. See the GPL for the specific language
 # governing rights and limitations.
-#                
+#
 # You should have received a copy of the GPL along with this
 # program. If not, go to http://www.gnu.org/licenses/gpl.html
 # or write to the Free Software Foundation, Inc.,
@@ -37,14 +37,14 @@ int main(int argc,char *argv[])
     else
     {
         web = atoi(argv[1]);
-        
+
         if(web >= 0 && web <= 1)
         {
             //Inizializzo la webcam
             CvCapture *capt = cvCaptureFromCAM(web);
             //Setto le proprietà della webcam a 640x480
             cvSetCaptureProperty(capt,CV_CAP_PROP_FRAME_WIDTH,640);
-            cvSetCaptureProperty(capt,CV_CAP_PROP_FRAME_HEIGHT,480);   
+            cvSetCaptureProperty(capt,CV_CAP_PROP_FRAME_HEIGHT,480);
             //Prendo il primo frame dalla webcam e lo salvo
             IplImage *imm = cvQueryFrame(capt);
             //Creo immagini
@@ -72,7 +72,7 @@ int main(int argc,char *argv[])
                 cvCreateTrackbar("HMIN",NORMAL,&low->H,255,NULL);
                 cvCreateTrackbar("SMIN",NORMAL,&low->S,255,NULL);
                 cvCreateTrackbar("VMIN",NORMAL,&low->V,255,NULL);
-                
+
                 cvCreateTrackbar("HMAX",NORMAL,&high->H,255,NULL);
                 cvCreateTrackbar("SMAX",NORMAL,&high->S,255,NULL);
                 cvCreateTrackbar("VMAX",NORMAL,&high->V,255,NULL);
@@ -139,6 +139,6 @@ int main(int argc,char *argv[])
         else
             puts("webcam not found");
     }
-    
+
     return 0;
 }

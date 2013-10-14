@@ -1,18 +1,18 @@
 /*
-# This file is part of Computer Vision Exam Project                            
-#                                           
-# Copyright(c) 2012 Domenico Luciani        
-# domenico.luciani@email.it
-#  
-# 
+# This file is part of Computer Vision Exam Project
+#
+# Copyright(c) 2012 Domenico Luciani
+# domenicoleoneluciani@gmail.com
+#
+#
 # This file may be licensed under the terms of of the
 # GNU General Public License Version 3 (the ``GPL'').
-# 
+#
 # Software distributed under the License is distributed
 # on an ``AS IS'' basis, WITHOUT WARRANTY OF ANY KIND, either
 # express or implied. See the GPL for the specific language
 # governing rights and limitations.
-#                
+#
 # You should have received a copy of the GPL along with this
 # program. If not, go to http://www.gnu.org/licenses/gpl.html
 # or write to the Free Software Foundation, Inc.,
@@ -57,4 +57,3 @@ void riduciNoise(IplImage*,IplImage*);
  *  Il terzo e il quarto parametro indicano le coordinate dove posizionare l'immagine.
  */
 void inserisci(IplImage*,IplImage*,int,int);
-

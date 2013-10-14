@@ -1,18 +1,18 @@
 /*
-# This file is part of Computer Vision Exam Project                            
-#                                           
-# Copyright(c) 2012 Domenico Luciani        
-# domenico.luciani@email.it
-#  
-# 
+# This file is part of Computer Vision Exam Project
+#
+# Copyright(c) 2012 Domenico Luciani
+# domenicoleoneluciani@gmail.com
+#
+#
 # This file may be licensed under the terms of of the
 # GNU General Public License Version 3 (the ``GPL'').
-# 
+#
 # Software distributed under the License is distributed
 # on an ``AS IS'' basis, WITHOUT WARRANTY OF ANY KIND, either
 # express or implied. See the GPL for the specific language
 # governing rights and limitations.
-#                
+#
 # You should have received a copy of the GPL along with this
 # program. If not, go to http://www.gnu.org/licenses/gpl.html
 # or write to the Free Software Foundation, Inc.,
@@ -45,24 +45,24 @@ int main(int argc, char *argv[])
             CvCapture *frame = cvCaptureFromCAM(web);
             cvSetCaptureProperty(frame,CV_CAP_PROP_FRAME_WIDTH,640);
             cvSetCaptureProperty(frame,CV_CAP_PROP_FRAME_HEIGHT,480);
-            //Immagini   
+            //Immagini
             IplImage *img = cvQueryFrame(frame);
             IplImage *hsv = cvCreateImage(cvGetSize(img),8,3);
             IplImage *binary = cvCreateImage(cvGetSize(img),8,1);
             IplImage *buffer = cvCreateImage(cvGetSize(img),8,3);
-            
+
             int step = binary->widthStep/sizeof(uchar);
 
             int i,j,capo=0,XX,YY;
             char tasto;
 
             uchar *target = (uchar*)binary->imageData;
-           //Valori 
+           //Valori
             HSV *low = (HSV*)malloc(sizeof(HSV));
             HSV *high = (HSV*)malloc(sizeof(HSV));
             //Il rettangolo
             Rettangolo *punti = (Rettangolo*)malloc(sizeof(Rettangolo));
-            
+
             CvPoint pos,last;
             //Colore
             CvScalar colore = CV_RGB(191,255,255);
@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
             cvNamedWindow(NOME,1);
             //Leggo i dati
             leggiConfig(low,high,(char*)FILE_CONFIG);
-           
+
             while(img)
             {
                 //Ruoto l'immagine
@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
                 cvInRangeS(hsv,cvScalar(low->H,low->S,low->V),cvScalar(high->H,high->S,high->V),binary);
                 //Riduco i disturbi
                 riduciNoise(binary,binary);
-                          
+
                 punti->xmin = 10000;
                 punti->xmax = 0;
                 punti->ymin = 10000;
@@ -139,7 +139,7 @@ int main(int argc, char *argv[])
                 }
                 //Se ho toccato un rettangolo posso scrivere
                 last = cvPoint(XX,YY);
-                if(capo == 1) 
+                if(capo == 1)
                 {
                     //Creo il cerchio nell'immagine buffer
                     cvCircle(buffer,last,20,colore,-1,CV_AA,0);
@@ -167,8 +167,8 @@ int main(int argc, char *argv[])
                     buffer = cvCreateImage(cvGetSize(img),8,3);
                     capo = 0;
                 }
-                
-                
+
+
                 img = cvQueryFrame(frame);
             }
             cvReleaseImage(&buffer);

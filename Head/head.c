@@ -2,7 +2,7 @@
 # This file is part of Computer Vision Exam Project
 #
 # Copyright(c) 2012 Domenico Luciani
-# domenico.luciani@email.it
+# domenicoleoneluciani@gmail.com
 #
 #
 # This file may be licensed under the terms of of the
@@ -111,11 +111,11 @@ int main(int argc,char **argv)
             CvCapture *immagine;
             //Creo uno spazio di memoria
             CvMemStorage *spazio=cvCreateMemStorage(0);
-            //Carico il file cascade -IMPORTANTE PER IL FUNZIONAMENTO DEL TRACKING- 
+            //Carico il file cascade -IMPORTANTE PER IL FUNZIONAMENTO DEL TRACKING-
             CvHaarClassifierCascade *cascade = (CvHaarClassifierCascade*) cvLoad(FILE_FACCIA_1,spazio);
             //Prendo i dati dalla cam
             immagine = cvCaptureFromCAM(web);
-            
+
             cvSetCaptureProperty(immagine,CV_CAP_PROP_FRAME_WIDTH,640);
             cvSetCaptureProperty(immagine,CV_CAP_PROP_FRAME_HEIGHT,480);
 
@@ -123,11 +123,11 @@ int main(int argc,char **argv)
             frame = cvQueryFrame(immagine);
             //Creo la finestra
             cvNamedWindow(NOME_FINESTRA1,CV_WINDOW_AUTOSIZE);
-            
+
             //Ciclo finchè ci sono frame
             while(frame)
-            {   
-                cvFlip(frame,frame,1);       
+            {
+                cvFlip(frame,frame,1);
                 frame = diminuisci(frame,50);
                 //Rilevo il volto e i relativi dettagli
                 rilevaVolto(frame,cascade,spazio);
@@ -141,7 +141,7 @@ int main(int argc,char **argv)
                 char c = cvWaitKey(15);
                 if(c == 'q') break;
             }
-            
+
             cvReleaseHaarClassifierCascade(&cascade);
             cvReleaseCapture(&immagine);
             cvReleaseImage(&frame);
@@ -154,4 +154,4 @@ int main(int argc,char **argv)
 }
 
 
-    
+

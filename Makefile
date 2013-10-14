@@ -23,5 +23,5 @@ movement: Movement/movement.c $(LIB)
 calibra: config/calibra.c $(LIB)
 	$(CC) $(LFLAGS) $(STANDARD) config/calibra.c -o config/calibra
 
-#By Domenico Luciani <domenico.luciani@email.it>
+#By Domenico Luciani <domenicoleoneluciani@gmail.com>
 
