@@ -59,7 +59,7 @@ int main(int argc,char **argv)
             //Funzione per inserire i dati del tempo in nome
             strftime(nome,24,"%H-%M-%S_%F.avi",timeobj);
             //Creo il writer che si occuperà di scrivere i vari frame presi come video compresso in formato divx
-            CvVideoWriter *video = cvCreateVideoWriter(nome,CV_FOURCC('D','I','V','X'),15,cvSize(640,480),1);
+            CvVideoWriter *video = cvCreateVideoWriter(nome,CV_FOURCC('X','V','I','D'),15,cvSize(640,480),1);
             //Inizializzo i font
             CvFont scritta,info;
             cvInitFont(&scritta,CV_FONT_HERSHEY_SIMPLEX,1.0,1.0,0,5,CV_AA);
